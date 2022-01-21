@@ -52,7 +52,7 @@ export const SongsList = ({ artistId }) => {
             >
               <div className="list row align-items-center">
                 <div className="col-md-3 col-sm-12">
-                  <img src="https://picsum.photos/seed/picsum/100/50" />
+                  <img src="https://picsum.photos/seed/picsum/50/50" />
                 </div>
 
                 <div className="col-md-7 fw-bold col-sm-12">{song.title}</div>
