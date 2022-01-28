@@ -1,0 +1,5 @@
+#input-search {
+    background: url(./../../assets/magnifier.png) no-repeat scroll 7px 7px;
+    padding-left: 35px;
+    border: 1px solid #ccc;
+}

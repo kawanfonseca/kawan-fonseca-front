@@ -1,0 +1,33 @@
+#list-song li {
+    padding: 0;
+}
+
+#list-song .song-item {
+    padding: 0.5rem 1rem;
+}
+
+#load-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#load-more button {
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5rem;
+    text-align: center;
+    background-color: #4a90e2;
+    color: #fdffff;
+    text-transform: uppercase;
+}
+
+.song-item {
+    cursor: pointer;
+}
+
+.image-song {
+    width: 100px;
+    height: 50px;
+}

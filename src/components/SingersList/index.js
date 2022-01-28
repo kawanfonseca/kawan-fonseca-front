@@ -1,63 +1,55 @@
-import React, { useState, useEffect } from "react";
-import DataService from "../../services/Service";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { getSingerByTitle, getSingers } from '../../services/Service'
+import { SearchInput } from '../SearchInput.js'
+import './SingersList.css'
 
 export const SingersList = () => {
-  const [singers, setSingers] = useState([]);
-  const [searchTitle, setSearchTitle] = useState("");
-
-  const onChangeSearchTitle = (e) => {
-    const searchTitle = e.target.value;
-
-    setSearchTitle(searchTitle);
-
-    DataService.getSingerByTitle(searchTitle)
-      .then((response) => {
-        setSingers(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
-
-  const retrieveSingers = () => {
-    DataService.getSingers()
-      .then((response) => {
-        setSingers(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
+  const [singers, setSingers] = useState([])
+  const [searchTitle, setSearchTitle] = useState('')
 
   useEffect(() => {
-    retrieveSingers();
-  }, []);
+    if (searchTitle) {
+      const getValueSingerByTitle = async () => {
+        const data = await getSingerByTitle(searchTitle)
+
+        setSingers(data)
+      }
+
+      getValueSingerByTitle()
+
+      return
+    }
+
+    setSingers([])
+  }, [searchTitle])
+
+  useEffect(() => {
+    const getValueSingers = async () => {
+      const data = await getSingers()
+
+      setSingers(data)
+    }
+
+    getValueSingers()
+  }, [])
 
   return (
-    <div className="list row justify-content-center">
-      <div className="col-md-8">
-        <div className="input-group mb-3">
-          <input
-            type="text"
-            className="form-control border-radius-lg"
-            placeholder="Search by title"
-            value={searchTitle}
-            onChange={onChangeSearchTitle}
-          />
-        </div>
-      </div>
+    <div className="list row justify-content-center" id="container-singers">
+      <SearchInput valueSearch={searchTitle} onChangeSearch={(value) => setSearchTitle(value)} />
 
-      <div className="col-md-8">
-        <ul className="list-group">
-          {singers &&
-            singers.map((singer) => (
-              <Link to={"/musicas/" + singer.id} key={singer.id}>
-                <li className={"list-group-item"}>{singer.username}</li>
-              </Link>
+      {searchTitle && singers && singers.length > 0 && (
+        <div className="col-md-8">
+          <ul id="list-singers" className="list-group">
+            {singers.map((singer) => (
+              <a href={`http://localhost:8081/musicas/${singer.id}`} key={singer.id}>
+                <li className="list-group-item" data-testid="singer">
+                  {singer.username}
+                </li>
+              </a>
             ))}
-        </ul>
-      </div>
+          </ul>
+        </div>
+      )}
     </div>
-  );
-};
+  )
+}

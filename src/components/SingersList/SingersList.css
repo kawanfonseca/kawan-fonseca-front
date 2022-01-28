@@ -1,0 +1,11 @@
+#list-singers {
+    border-radius: 0.3rem;
+}
+
+#list-singers a:first-child {
+    border-radius: 0.3rem 0.3rem 0 0;
+}
+
+#list-singers a:last-child {
+    border-radius: 0 0 0.3rem 0.3rem;
+}

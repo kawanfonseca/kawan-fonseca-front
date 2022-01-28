@@ -1,2 +1,2 @@
-export * from "./SingersList";
-export * from "./SongsList";
+export * from './SingersList'
+export * from './SongsList'

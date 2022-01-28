@@ -1,55 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-
 * {
-  font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .list {
-  text-align: left;
-  max-width: 750px;
-  margin: auto;
+    text-align: left;
+    max-width: 750px;
+    margin: auto;
 }
 
 .submit-form {
-  max-width: 300px;
-  margin: auto;
+    max-width: 300px;
+    margin: auto;
 }
 
 .edit-form {
-  max-width: 300px;
-  margin: auto;
+    max-width: 300px;
+    margin: auto;
 }
 
 .border-radius-lg {
-  border-radius: 1.25rem;
+    border-radius: 1.25rem;
 }
 
 .list-group {
-  border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .list-group-item {
-  border: none;
+    border: none;
 }
 
-.list-group-item:hover, html, #root {
-  background-color: rgba(0,0,0,.1);
+.list-group-item:hover,
+html,
+#root {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .list-group a {
-  color: #000;
-  text-decoration: none;
+    color: #000;
+    text-decoration: none;
 }
 
 .modal-header {
-  border-bottom: none;
-  padding-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .modal-body {
-  padding-top: 0;
+    padding-top: 0;
+}
+
+.modal-body img {
+    width: 215px;
+    height: 215px;
 }
 
 .modal-dialog {
-  max-width: 60%;
+    max-width: 55%;
+}
+
+@media screen and (max-width: 1300px) {
+    .modal-dialog {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .modal-dialog {
+        max-width: 95%;
+    }
 }

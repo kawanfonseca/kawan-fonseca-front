@@ -1,39 +1,56 @@
 {
-  "name": "react-hooks-crud",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "axios": "^0.19.2",
-    "bootstrap": "^5.1.3",
-    "jquery": "^3.6.0",
-    "react": "^16.13.1",
-    "react-bootstrap": "^2.1.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "react-hooks-crud",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "axios": "^0.19.2",
+        "bootstrap": "^5.1.3",
+        "jquery": "^3.6.0",
+        "react": "^16.13.1",
+        "react-bootstrap": "^2.1.1",
+        "react-dom": "^16.13.1",
+        "react-fakeimg": "^1.0.11",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "3.4.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+        "test:coverage": "npm run test -- --coverage --watchAll=true --coveragePathIgnorePatterns=src/index.js --coveragePathIgnorePatterns=src/components/index.js",
+        "eject": "react-scripts eject",
+        "format": "prettier --write \"src/**/*.{js,jsx}\"",
+        "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@testing-library/react": "^12.1.2",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/user-event": "^7.1.2",
+        "jest-environment-jsdom-sixteen": "^2.0.0",
+        "axios-mock-adapter": "^1.20.0",
+        "eslint": "^8.7.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-jsx-a11y": "^6.5.1",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.28.0",
+        "eslint-plugin-react-hooks": "^4.3.0",
+        "prettier": "^2.5.1",
+        "react-error-overlay": "^6.0.9"
+    }
 }
